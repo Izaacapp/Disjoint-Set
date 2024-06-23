@@ -36,7 +36,7 @@ run_test() {
   echo "Expected output:           Temporary output:" | tee -a $log_file
   paste <(cat -n "$expected_output_file") <(cat -n "$temp_output_file") | while IFS=$'\t' read -r num1 line1 num2 line2
   do
-    printf "%-30s %-30s" "$line1" "$line2" | tee -a $log_file
+    printf "%-30s %-30s\n" "$line1" "$line2" | tee -a $log_file
   done
 
   echo "=======================" >> $log_file
