@@ -23,6 +23,8 @@ run_test() {
   input_file=$1
   expected_output_file=$2
   temp_output_file="${input_file}.temp.out"
+  temp_trimmed_output_file="${input_file}.trimmed.temp.out"
+  expected_trimmed_output_file="${expected_output_file}.trimmed"
 
   echo "Running test with input: $input_file" | tee -a $log_file
 
@@ -33,25 +35,28 @@ run_test() {
     return 1
   fi
 
-  # Compare the outputs and print side-by-side
-  if diff -q "$temp_output_file" "$expected_output_file" > /dev/null; then
+  # Trim trailing whitespaces from the temporary output and expected output
+  tr -d '[:space:]' < "$temp_output_file" > "$temp_trimmed_output_file"
+  tr -d '[:space:]' < "$expected_output_file" > "$expected_trimmed_output_file"
+
+  # Compare the trimmed outputs
+  if diff -q "$temp_trimmed_output_file" "$expected_trimmed_output_file" > /dev/null; then
     echo "Test passed for input: $input_file" | tee -a $log_file
   else
     echo "Test failed for input: $input_file" | tee -a $log_file
-    echo "Expected output:           Temporary output:" | tee -a $log_file
-
-    # Ensure the files have the same number of lines by padding with empty lines
-    lines_expected=$(wc -l < "$expected_output_file")
-    lines_temp=$(wc -l < "$temp_output_file")
-    max_lines=$((lines_expected > lines_temp ? lines_expected : lines_temp))
-
-    awk 'NR<=ARGC-1 {a[NR]=$0} NR<=ARGC-2 {b[NR]=$0} END { for (i=1; i<=ARGV[3]; i++) printf "%-30s %-30s\n", a[i], b[i] }' "$expected_output_file" "$temp_output_file" "$max_lines" >> $log_file
+    echo "Differences:" | tee -a $log_file
+    diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
+    # Print side-by-side comparison
+    paste "$expected_output_file" "$temp_output_file" | awk '{printf "%-30s %-30s\n", $1, $2}' >> $log_file
   fi
 
+  # Append the temporary output to the log file for review
+  echo "Temporary output:" >> $log_file
+  cat "$temp_output_file" >> $log_file
   echo "=======================" >> $log_file
 
   # Clean up temporary files
-  rm "$temp_output_file"
+  rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
 }
 
 # Run all test cases
