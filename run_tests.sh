@@ -39,7 +39,13 @@ run_test() {
   else
     echo "Test failed for input: $input_file" | tee -a $log_file
     echo "Expected output:           Temporary output:" | tee -a $log_file
-    paste "$expected_output_file" "$temp_output_file" | awk '{printf "%-30s %-30s\n", $1, $2}' >> $log_file
+
+    # Ensure the files have the same number of lines by padding with empty lines
+    lines_expected=$(wc -l < "$expected_output_file")
+    lines_temp=$(wc -l < "$temp_output_file")
+    max_lines=$((lines_expected > lines_temp ? lines_expected : lines_temp))
+
+    awk 'NR<=ARGC-1 {a[NR]=$0} NR<=ARGC-2 {b[NR]=$0} END { for (i=1; i<=ARGV[3]; i++) printf "%-30s %-30s\n", a[i], b[i] }' "$expected_output_file" "$temp_output_file" "$max_lines" >> $log_file
   fi
 
   echo "=======================" >> $log_file
