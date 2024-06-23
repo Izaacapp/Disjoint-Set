@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Compile the Java program
 javac Main.java
@@ -17,8 +17,8 @@ log_file="test_results.log"
 # Initialize the log file
 echo "Test Results - $(date)" > $log_file
 echo "=======================" >> $log_file
-printf "%-50s %-50s\n" "Temporary Output" "Expected Output" >> $log_file
-echo "================================================================================" >> $log_file
+printf "%-50s | %-50s\n" "Temporary Output" "Expected Output" >> $log_file
+echo "=====================================================================================================================" >> $log_file
 
 # Function to run a test case
 run_test() {
@@ -53,7 +53,7 @@ run_test() {
   # Append the temporary and expected output to the log file for review
   echo "Temporary output vs Expected output:" >> $log_file
   paste -d '|' <(printf "%-50s\n" "$(cat $temp_output_file)") <(printf "%-50s\n" "$(cat $expected_output_file)") >> $log_file
-  echo "================================================================================" >> $log_file
+  echo "=====================================================================================================================" >> $log_file
 
   # Clean up temporary files
   rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
