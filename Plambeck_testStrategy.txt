@@ -1,0 +1,161 @@
+## Testing Strategy for Assignment 3 - Disjoint Set
+
+### Overview
+This document outlines the testing strategy employed to ensure that the code written for Assignment 3, which involves the use of disjoint set data structures, is correct and meets the problem requirements.
+
+### Testing Strategy
+
+#### 1. **Unit Tests**
+   - **Objective:** To verify the correctness of individual components, particularly the disjoint set operations (`find`, `union`, and path compression).
+   - **Approach:**
+     - Implement test cases to check the correctness of the `find` operation to ensure it returns the correct root of a set.
+     - Verify the `union` operation to confirm that it correctly merges two sets and maintains the rank and path compression.
+     - Test edge cases such as union of already connected components and `find` operations on a single element.
+
+#### 2. **Integration Tests**
+   - **Objective:** To ensure that the disjoint set operations work together correctly to solve the overall problem.
+   - **Approach:**
+     - Use sample inputs provided in the assignment to test the overall functionality.
+     - Verify that the connectivity calculations are correct after each destruction step.
+     - Ensure that the program reads from standard input and produces the correct output format.
+
+#### 3. **System Tests**
+   - **Objective:** To validate the program against a wide range of inputs, including edge cases and large datasets.
+   - **Approach:**
+     - Create multiple test files with varying numbers of nodes and connections.
+     - Include tests with the maximum allowed values for nodes and connections to test the efficiency and performance.
+     - Test with inputs that have multiple components from the beginning to ensure the program correctly handles disconnected graphs.
+
+#### 4. **Performance Testing**
+   - **Objective:** To ensure the program performs efficiently with the maximum input size.
+   - **Approach:**
+     - Measure the execution time for large input cases to ensure it runs within acceptable limits.
+     - Optimize the code if any performance bottlenecks are identified during testing.
+
+### Sample Test Cases
+
+#### Test Case 1: Basic Functionality
+- **Input:**
+  ```
+  3 3 3
+  1 2
+  1 3
+  2 3
+  3
+  1
+  2
+  ```
+- **Expected Output:**
+  ```
+  9
+  9
+  5
+  3
+  ```
+
+#### Test Case 2: Larger Graph with Multiple Components
+- **Input:**
+  ```
+  9 8 2
+  1 5
+  2 3
+  2 6
+  3 6
+  6 7
+  7 8
+  7 9
+  8 9
+  5
+  3
+  ```
+- **Expected Output:**
+  ```
+  41
+  23
+  23
+  ```
+
+### Execution of Tests
+
+A shell script `run_tests.sh` is used to automate the execution of these tests. The script:
+1. Compiles the Java program.
+2. Runs the program with each input file.
+3. Compares the output against the expected output.
+4. Logs the results for review.
+
+#### Script: `run_tests.sh`
+
+```bash
+#!/bin/bash
+
+# Compile the Java program
+javac Main.java
+if [ $? -ne 0 ]; then
+  echo "Compilation failed"
+  exit 1
+fi
+
+# Define an array of input files and their corresponding expected output files
+input_files=("destroy_10.in" "destroy_sample_01.in" "destroy_sample_02.in")
+output_files=("destroy_10.out" "destroy_sample_01.out" "destroy_sample_02.out")
+
+# Log file to store the results
+log_file="test_results.log"
+
+# Initialize the log file
+echo "Test Results - $(date)" > $log_file
+echo "=====================================================================================================================" >> $log_file
+printf "%-50s | %-50s\n" "Temporary Output" "Expected Output" >> $log_file
+echo "=====================================================================================================================" >> $log_file
+
+# Function to run a test case
+run_test() {
+  input_file=$1
+  expected_output_file=$2
+  temp_output_file="${input_file}.temp.out"
+  temp_trimmed_output_file="${input_file}.trimmed.temp.out"
+  expected_trimmed_output_file="${expected_output_file}.trimmed"
+
+  echo "Running test with input: $input_file" | tee -a $log_file
+
+  # Run the Java program with the input file
+  java Main < "$input_file" > "$temp_output_file"
+  if [ $? -ne 0 ]; then
+    echo "Execution failed for input: $input_file" | tee -a $log_file
+    return 1
+  fi
+
+  # Trim trailing whitespaces from the temporary output and expected output
+  tr -d '[:space:]' < "$temp_output_file" > "$temp_trimmed_output_file"
+  tr -d '[:space:]' < "$expected_output_file" > "$expected_trimmed_output_file"
+
+  # Compare the trimmed outputs
+  if diff -q "$temp_trimmed_output_file" "$expected_trimmed_output_file" > /dev/null; then
+    echo "Test passed for input: $input_file" | tee -a $log_file
+  else
+    echo "Test failed for input: $input_file" | tee -a $log_file
+    echo "Differences:" | tee -a $log_file
+    diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
+  fi
+
+  # Append the temporary and expected output to the log file for review
+  # Read the files line by line and print them side by side
+  paste <(cat $temp_output_file) <(cat $expected_output_file) | awk -F '\t' '{printf "%-50s | %-50s\n", $1, $2}' >> $log_file
+
+  echo "=====================================================================================================================" >> $log_file
+
+  # Clean up temporary files
+  rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
+}
+
+# Run all test cases
+for (( i=0; i<${#input_files[@]}; i++ )); do
+  run_test "${input_files[$i]}" "${output_files[$i]}"
+done
+
+echo "Test run complete. See $log_file for details."
+```
+
+### Conclusion
+
+By implementing the above testing strategy, we aim to ensure that the code for Assignment 3 is robust, correct, and efficient. Each test case is carefully designed to validate different aspects of the program, ensuring comprehensive coverage and reliability.
