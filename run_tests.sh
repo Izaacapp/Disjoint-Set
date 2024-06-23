@@ -26,24 +26,17 @@ run_test() {
 
   echo "Running test with input: $input_file" | tee -a $log_file
 
-  # Print the expected output first
-  echo "Expected output:           Temporary output:" | tee -a $log_file
-  paste -d'\t' $expected_output_file $temp_output_file | while IFS=$'\t' read -r col1 col2
-  do
-    printf "%-30s %-30s\n" "$col1" " " | tee -a $log_file
-  done
-
-  # Run the Java program with the input file and save to temporary output file
+  # Run the Java program with the input file
   java Main < "$input_file" > "$temp_output_file"
   if [ $? -ne 0 ]; then
     echo "Execution failed for input: $input_file" | tee -a $log_file
     return 1
   fi
 
-  # Print the temporary output
-  paste -d'\t' $expected_output_file $temp_output_file | while IFS=$'\t' read -r col1 col2
+  echo "Expected output:           Temporary output:" | tee -a $log_file
+  paste <(cat -n "$expected_output_file") <(cat -n "$temp_output_file") | while IFS=$'\t' read -r num1 line1 num2 line2
   do
-    printf "%-30s %-30s\n" " " "$col2" | tee -a $log_file
+    printf "%-30s %-30s\n" "$line1" "$line2" | tee -a $log_file
   done
 
   echo "=======================" >> $log_file
