@@ -106,16 +106,21 @@ public class Main {
             int v = edge[1];
 
             // Recalculate sizes before union
-            int sizeU = ds.getSize(u);
-            int sizeV = ds.getSize(v);
+            int rootU = ds.find(u);
+            int rootV = ds.find(v);
 
-            ds.union(u, v);
+            if (rootU != rootV) {
+                int sizeU = ds.size[rootU];
+                int sizeV = ds.size[rootV];
 
-            // New size of the set after union
-            int newSize = ds.getSize(u);
+                ds.union(u, v);
 
-            initialConnectivity -= (long) sizeU * sizeU + (long) sizeV * sizeV;
-            initialConnectivity += (long) newSize * newSize;
+                // New size of the set after union
+                int newSize = ds.getSize(u);
+
+                initialConnectivity -= (long) sizeU * sizeU + (long) sizeV * sizeV;
+                initialConnectivity += (long) newSize * newSize;
+            }
 
             results.add(initialConnectivity);
         }
