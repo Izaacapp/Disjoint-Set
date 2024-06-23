@@ -1,38 +1,36 @@
-## Testing Strategy for Assignment 3 - Disjoint Set
+### Testing Strategy for Assignment 3 - Disjoint Set
 
-### Overview
-This document outlines the testing strategy employed to ensure that the code written for Assignment 3, which involves the use of disjoint set data structures, is correct and meets the problem requirements.
+#### Overview
+This document outlines the testing strategy for Assignment 3, which involves the use of disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
-### Testing Strategy
+#### Unit Tests
+- **Objective:** Validate individual components, particularly the disjoint set operations (`find`, `union`, path compression).
+- **Approach:**
+  - Test `find` to ensure it returns the correct root.
+  - Verify `union` merges two sets correctly, maintaining rank and path compression.
+  - Include edge cases such as union of already connected components and `find` on single elements.
 
-#### 1. **Unit Tests**
-   - **Objective:** To verify the correctness of individual components, particularly the disjoint set operations (`find`, `union`, and path compression).
-   - **Approach:**
-     - Implement test cases to check the correctness of the `find` operation to ensure it returns the correct root of a set.
-     - Verify the `union` operation to confirm that it correctly merges two sets and maintains the rank and path compression.
-     - Test edge cases such as union of already connected components and `find` operations on a single element.
+#### Integration Tests
+- **Objective:** Ensure disjoint set operations work together to solve the problem.
+- **Approach:**
+  - Use provided sample inputs to test overall functionality.
+  - Check connectivity calculations after each destruction step.
+  - Confirm the program reads from standard input and outputs correctly.
 
-#### 2. **Integration Tests**
-   - **Objective:** To ensure that the disjoint set operations work together correctly to solve the overall problem.
-   - **Approach:**
-     - Use sample inputs provided in the assignment to test the overall functionality.
-     - Verify that the connectivity calculations are correct after each destruction step.
-     - Ensure that the program reads from standard input and produces the correct output format.
+#### System Tests
+- **Objective:** Validate the program against a wide range of inputs, including edge cases and large datasets.
+- **Approach:**
+  - Create test files with varying numbers of nodes and connections.
+  - Test with maximum allowed values to check efficiency and performance.
+  - Include tests with multiple initial components to ensure proper handling of disconnected graphs.
 
-#### 3. **System Tests**
-   - **Objective:** To validate the program against a wide range of inputs, including edge cases and large datasets.
-   - **Approach:**
-     - Create multiple test files with varying numbers of nodes and connections.
-     - Include tests with the maximum allowed values for nodes and connections to test the efficiency and performance.
-     - Test with inputs that have multiple components from the beginning to ensure the program correctly handles disconnected graphs.
+#### Performance Testing
+- **Objective:** Ensure the program performs efficiently with maximum input size.
+- **Approach:**
+  - Measure execution time for large inputs to ensure it runs within acceptable limits.
+  - Optimize code if performance bottlenecks are identified.
 
-#### 4. **Performance Testing**
-   - **Objective:** To ensure the program performs efficiently with the maximum input size.
-   - **Approach:**
-     - Measure the execution time for large input cases to ensure it runs within acceptable limits.
-     - Optimize the code if any performance bottlenecks are identified during testing.
-
-### Sample Test Cases
+### Sample Test Case
 
 #### Test Case 1: Basic Functionality
 - **Input:**
@@ -53,35 +51,13 @@ This document outlines the testing strategy employed to ensure that the code wri
   3
   ```
 
-#### Test Case 2: Larger Graph with Multiple Components
-- **Input:**
-  ```
-  9 8 2
-  1 5
-  2 3
-  2 6
-  3 6
-  6 7
-  7 8
-  7 9
-  8 9
-  5
-  3
-  ```
-- **Expected Output:**
-  ```
-  41
-  23
-  23
-  ```
-
 ### Execution of Tests
 
-A shell script `run_tests.sh` is used to automate the execution of these tests. The script:
-1. Compiles the Java program.
-2. Runs the program with each input file.
-3. Compares the output against the expected output.
-4. Logs the results for review.
+The `run_tests.sh` script automates the test execution:
+- Compiles the Java program.
+- Runs the program with each input file.
+- Compares output against expected results.
+- Logs the results for review.
 
 #### Script: `run_tests.sh`
 
@@ -95,11 +71,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Define an array of input files and their corresponding expected output files
+# Define input and output files
 input_files=("destroy_10.in" "destroy_sample_01.in" "destroy_sample_02.in")
 output_files=("destroy_10.out" "destroy_sample_01.out" "destroy_sample_02.out")
 
-# Log file to store the results
+# Log file for results
 log_file="test_results.log"
 
 # Initialize the log file
@@ -125,7 +101,7 @@ run_test() {
     return 1
   fi
 
-  # Trim trailing whitespaces from the temporary output and expected output
+  # Trim trailing whitespaces from the outputs
   tr -d '[:space:]' < "$temp_output_file" > "$temp_trimmed_output_file"
   tr -d '[:space:]' < "$expected_output_file" > "$expected_trimmed_output_file"
 
@@ -138,8 +114,7 @@ run_test() {
     diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
   fi
 
-  # Append the temporary and expected output to the log file for review
-  # Read the files line by line and print them side by side
+  # Append outputs to the log file for review
   paste <(cat $temp_output_file) <(cat $expected_output_file) | awk -F '\t' '{printf "%-50s | %-50s\n", $1, $2}' >> $log_file
 
   echo "=====================================================================================================================" >> $log_file
@@ -158,4 +133,4 @@ echo "Test run complete. See $log_file for details."
 
 ### Conclusion
 
-By implementing the above testing strategy, we aim to ensure that the code for Assignment 3 is robust, correct, and efficient. Each test case is carefully designed to validate different aspects of the program, ensuring comprehensive coverage and reliability.
+This testing strategy ensures that the code for Assignment 3 is robust, correct, and efficient. Each test case validates different aspects of the program, ensuring comprehensive coverage and reliability.
