@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Compile the Java program
 javac Main.java
@@ -23,6 +23,8 @@ run_test() {
   input_file=$1
   expected_output_file=$2
   temp_output_file="${input_file}.temp.out"
+  temp_trimmed_output_file="${input_file}.trimmed.temp.out"
+  expected_trimmed_output_file="${expected_output_file}.trimmed"
 
   echo "Running test with input: $input_file" | tee -a $log_file
 
@@ -33,16 +35,26 @@ run_test() {
     return 1
   fi
 
-  echo "Expected output:           Temporary output:" | tee -a $log_file
-  paste <(cat -n "$expected_output_file") <(cat -n "$temp_output_file") | while IFS=$'\t' read -r num1 line1 num2 line2
-  do
-    printf "%-30s %-30s\n" "$line1" "$line2" | tee -a $log_file
-  done
+  # Trim trailing whitespaces from the temporary output and expected output
+  tr -d '[:space:]' < "$temp_output_file" > "$temp_trimmed_output_file"
+  tr -d '[:space:]' < "$expected_output_file" > "$expected_trimmed_output_file"
 
+  # Compare the trimmed outputs
+  if diff -q "$temp_trimmed_output_file" "$expected_trimmed_output_file" > /dev/null; then
+    echo "Test passed for input: $input_file" | tee -a $log_file
+  else
+    echo "Test failed for input: $input_file" | tee -a $log_file
+    echo "Differences:" | tee -a $log_file
+    diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
+  fi
+
+  # Append the temporary output to the log file for review
+  echo "Temporary output:" >> $log_file
+  cat "$temp_output_file" >> $log_file
   echo "=======================" >> $log_file
 
   # Clean up temporary files
-  rm "$temp_output_file"
+  rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
 }
 
 # Run all test cases
