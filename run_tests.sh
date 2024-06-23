@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Compile the Java program
 javac Main.java
