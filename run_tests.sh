@@ -16,7 +16,7 @@ log_file="test_results.log"
 
 # Initialize the log file
 echo "Test Results - $(date)" > $log_file
-echo "=======================" >> $log_file
+echo "=====================================================================================================================" >> $log_file
 printf "%-50s | %-50s\n" "Temporary Output" "Expected Output" >> $log_file
 echo "=====================================================================================================================" >> $log_file
 
