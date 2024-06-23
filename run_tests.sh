@@ -52,7 +52,7 @@ run_test() {
 
   # Append the temporary and expected output to the log file for review
   echo "Temporary output vs Expected output:" >> $log_file
-  paste -d '|' <(printf "%-50s\n" "$(cat $temp_output_file)") <(printf "%-50s\n" "$(cat $expected_output_file)") >> $log_file
+  paste <(printf "%-50s\n" "$(cat $temp_output_file)") <(printf "%-50s\n" "$(cat $expected_output_file)") | column -s $'\t' -t >> $log_file
   echo "=====================================================================================================================" >> $log_file
 
   # Clean up temporary files
