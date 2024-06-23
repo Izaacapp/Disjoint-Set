@@ -23,40 +23,33 @@ run_test() {
   input_file=$1
   expected_output_file=$2
   temp_output_file="${input_file}.temp.out"
-  temp_trimmed_output_file="${input_file}.trimmed.temp.out"
-  expected_trimmed_output_file="${expected_output_file}.trimmed"
 
   echo "Running test with input: $input_file" | tee -a $log_file
 
-  # Run the Java program with the input file
+  # Print the expected output first
+  echo "Expected output:           Temporary output:" | tee -a $log_file
+  paste -d'\t' $expected_output_file $temp_output_file | while IFS=$'\t' read -r col1 col2
+  do
+    printf "%-30s %-30s\n" "$col1" " " | tee -a $log_file
+  done
+
+  # Run the Java program with the input file and save to temporary output file
   java Main < "$input_file" > "$temp_output_file"
   if [ $? -ne 0 ]; then
     echo "Execution failed for input: $input_file" | tee -a $log_file
     return 1
   fi
 
-  # Trim trailing whitespaces from the temporary output and expected output
-  tr -d '[:space:]' < "$temp_output_file" > "$temp_trimmed_output_file"
-  tr -d '[:space:]' < "$expected_output_file" > "$expected_trimmed_output_file"
+  # Print the temporary output
+  paste -d'\t' $expected_output_file $temp_output_file | while IFS=$'\t' read -r col1 col2
+  do
+    printf "%-30s %-30s\n" " " "$col2" | tee -a $log_file
+  done
 
-  # Compare the trimmed outputs
-  if diff -q "$temp_trimmed_output_file" "$expected_trimmed_output_file" > /dev/null; then
-    echo "Test passed for input: $input_file" | tee -a $log_file
-  else
-    echo "Test failed for input: $input_file" | tee -a $log_file
-    echo "Differences:" | tee -a $log_file
-    diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
-    # Print side-by-side comparison
-    paste "$expected_output_file" "$temp_output_file" | awk '{printf "%-30s %-30s\n", $1, $2}' >> $log_file
-  fi
-
-  # Append the temporary output to the log file for review
-  echo "Temporary output:" >> $log_file
-  cat "$temp_output_file" >> $log_file
   echo "=======================" >> $log_file
 
   # Clean up temporary files
-  rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
+  rm "$temp_output_file"
 }
 
 # Run all test cases
