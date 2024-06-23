@@ -17,6 +17,8 @@ log_file="test_results.log"
 # Initialize the log file
 echo "Test Results - $(date)" > $log_file
 echo "=======================" >> $log_file
+printf "%-50s %-50s\n" "Temporary Output" "Expected Output" >> $log_file
+echo "================================================================================" >> $log_file
 
 # Function to run a test case
 run_test() {
@@ -48,10 +50,10 @@ run_test() {
     diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
   fi
 
-  # Append the temporary output to the log file for review
-  echo "Temporary output:" >> $log_file
-  cat "$temp_output_file" >> $log_file
-  echo "=======================" >> $log_file
+  # Append the temporary and expected output to the log file for review
+  echo "Temporary output vs Expected output:" >> $log_file
+  paste -d '|' <(printf "%-50s\n" "$(cat $temp_output_file)") <(printf "%-50s\n" "$(cat $expected_output_file)") >> $log_file
+  echo "================================================================================" >> $log_file
 
   # Clean up temporary files
   rm "$temp_output_file" "$temp_trimmed_output_file" "$expected_trimmed_output_file"
