@@ -47,7 +47,7 @@ run_test() {
     echo "Differences:" | tee -a $log_file
     diff "$temp_trimmed_output_file" "$expected_trimmed_output_file" | tee -a $log_file
     # Print side-by-side comparison
-    paste "$temp_output_file" "$expected_output_file" | awk '{printf "%-50s %s\n", $1, $2}' >> $log_file
+    paste "$expected_output_file" "$temp_output_file" | awk '{printf "%-30s %-30s\n", $1, $2}' >> $log_file
   fi
 
   # Append the temporary output to the log file for review
