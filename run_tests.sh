@@ -33,7 +33,7 @@ run_test() {
     return 1
   fi
 
-  # Compare the outputs
+  # Compare the outputs and print side-by-side
   if diff -q "$temp_output_file" "$expected_output_file" > /dev/null; then
     echo "Test passed for input: $input_file" | tee -a $log_file
   else
