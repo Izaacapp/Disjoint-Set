@@ -1,7 +1,7 @@
 Testing Strategy for Assignment 3 - Disjoint Set
 
 Overview
-This document outlines the testing strategy for Assignment 3, which involves the use of disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
+This document outlines the testing strategy for PA3, which involves the use of disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
 Unit Tests
 Objective: Validate individual components, particularly the disjoint set operations (find, union, path compression).
@@ -129,4 +129,4 @@ echo "Test run complete. See $log_file for details."
 ```
 
 Conclusion
-This testing strategy ensures that the code for Assignment 3 is robust, correct, and efficient. Each test case validates different aspects of the program, ensuring comprehensive coverage and reliability.
+This testing strategy ensures that the code for PA3 is robust, correct, and efficient. Each test case validates different aspects of the program, ensuring comprehensive coverage and reliability.
