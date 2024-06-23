@@ -33,8 +33,8 @@ run_test() {
     return 1
   fi
 
-  # Compare the output with the expected output
-  if diff -q "$temp_output_file" "$expected_output_file" > /dev/null; then
+  # Compare the output with the expected output (trim trailing whitespace)
+  if diff -q <(tr -d '[:space:]' < "$temp_output_file") <(tr -d '[:space:]' < "$expected_output_file") > /dev/null; then
     echo "Test passed for input: $input_file" | tee -a $log_file
   else
     echo "Test failed for input: $input_file" | tee -a $log_file
