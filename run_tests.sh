@@ -16,7 +16,7 @@ log_file="test_results.log"
 
 # Initialize the log file
 echo "Test Results - $(date)" > $log_file
-echo "=====================================================================================================================" >> $log_file
+echo "=======================" >> $log_file
 printf "%-50s | %-50s\n" "Temporary Output" "Expected Output" >> $log_file
 echo "=====================================================================================================================" >> $log_file
 
@@ -51,8 +51,6 @@ run_test() {
   fi
 
   # Append the temporary and expected output to the log file for review
-  echo "Temporary output vs Expected output:" >> $log_file
-
   # Read the files line by line and print them side by side
   paste <(cat $temp_output_file) <(cat $expected_output_file) | awk -F '\t' '{printf "%-50s | %-50s\n", $1, $2}' >> $log_file
 

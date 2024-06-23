@@ -1,10 +1,9 @@
-Test Results - Sat Jun 22 21:10:16 EDT 2024
-=====================================================================================================================
+Test Results - Sat Jun 22 21:21:56 EDT 2024
+=======================
 Temporary Output                                   | Expected Output                                   
 =====================================================================================================================
 Running test with input: destroy_10.in
 Test passed for input: destroy_10.in
-Temporary output vs Expected output:
 8087404970                                         | 8087404970                                       
 4092509720                                         | 4092509720                                       
 4049865920                                         | 4049865920                                       
@@ -3008,14 +3007,12 @@ Temporary output vs Expected output:
 =====================================================================================================================
 Running test with input: destroy_sample_01.in
 Test passed for input: destroy_sample_01.in
-Temporary output vs Expected output:
 41                                                 | 41                                               
 23                                                 | 23                                               
 23                                                 | 23                                               
 =====================================================================================================================
 Running test with input: destroy_sample_02.in
 Test passed for input: destroy_sample_02.in
-Temporary output vs Expected output:
 9                                                  | 9                                                
 9                                                  | 9                                                
 5                                                  | 5                                                
