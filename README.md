@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Izaacapp/Disjoint-Set">
-    <img src="Disjoint-Set.png" alt="Logo" width="250" height="80">
+    <img src="resources/Disjoint-Set.png" alt="Logo" width="250" height="80">
   </a>
 
   <h3 align="center">Disjoint Set Network Connectivity</h3>
