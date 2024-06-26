@@ -1,7 +1,56 @@
-## Overview
+<a name="readme-top"></a>
+
+<div align="center">
+  
+  [![Contributors][contributors-shield]][contributors-url]
+  [![Forks][forks-shield]][forks-url]
+  [![Stargazers][stars-shield]][stars-url]
+  [![Issues][issues-shield]][issues-url]
+  [![LinkedIn][linkedin-shield]][linkedin-url]
+</div>
+
+<br />
+<div align="center">
+  <a href="https://github.com/your-repo-link">
+    <img src="your-logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Disjoint Set Network Connectivity</h3>
+
+  <p align="center">
+    Using disjoint sets to reduce network connectivity by destroying connections.
+    <br />
+    <a href="https://github.com/your-repo-link"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    ·
+    <a href="https://github.com/your-repo-link/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/your-repo-link/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#files-included">Files Included</a></li>
+    <li><a href="#compilation-and-execution">Compilation and Execution</a></li>
+    <li><a href="#sample-input-and-output">Sample Input and Output</a></li>
+    <li><a href="#testing-strategy">Testing Strategy</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+## About The Project
+
 This project is for Assignment 3 of COP 3503C. The assignment involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
 ## Files Included
+
 - **Main.java**: The main Java program file containing the implementation of the solution.
 - **destroy_10.in**: Input file for test case 1.
 - **destroy_10.out**: Expected output file for test case 1.
@@ -16,6 +65,7 @@ This project is for Assignment 3 of COP 3503C. The assignment involves using dis
 - **PA3 more hints.png**: Additional hints for the assignment.
 
 ## Compilation and Execution
+
 To compile and run the program along with the tests, follow these steps:
 
 1. **Compile the Java Program:**
@@ -31,7 +81,9 @@ To compile and run the program along with the tests, follow these steps:
 This script will compile the Java program, run it against the provided input files, and compare the outputs with the expected results. The results of the tests will be logged in `test_results.log`.
 
 ## Sample Input and Output
-### Test Case 1
+
+### Test Case 1: Basic Functionality
+
 **Input:**
 ```
 3 3 3
@@ -51,12 +103,43 @@ This script will compile the Java program, run it against the provided input fil
 3
 ```
 
-### Running the Tests
-To run the tests, execute the `run_tests.sh` script as described above. This will automate the testing process and log the results for each test case.
-
 ## Testing Strategy
+
 The testing strategy is outlined in the `Plambeck_testStrategy.txt` file. It includes unit tests, integration tests, system tests, and performance tests to ensure the robustness and correctness of the program.
 
-## Conclusion
-This project uses disjoint set data structures to solve the problem of reducing network connectivity. The provided files and scripts ensure that the program is tested thoroughly to meet the assignment requirements.
+## Contributing
 
+"An expert is a person who has made all the mistakes that can be made in a very narrow field." - Niels Bohr
+
+Contributions are vital for progress. Fork the repo, create a feature branch, commit your changes, push, and open a pull request.
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## Contact
+
+Your Name  
+[Tweet me](https://twitter.com/your-twitter-handle)  
+[Email me](mailto:your-email@example.com)  
+
+## Acknowledgments
+
+* [University of Central Florida](https://www.ucf.edu/)
+* [Java Documentation](https://docs.oracle.com/en/java/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/your-repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/your-repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/your-repo.svg?style=for-the-badge
+[forks-url]: https://github.com/your-repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/your-repo.svg?style=for-the-badge
+[stars-url]: https://github.com/your-repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/your-repo.svg?style=for-the-badge
+[issues-url]: https://github.com/your-repo/issues
+[license-shield]: https://img.shields.io/github/license/your-repo.svg?style=for-the-badge
+[license-url]: https://github.com/your-repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/your-linkedin-profile
