@@ -48,7 +48,10 @@
 
 This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
-
+**Methodology:**
+- **Graph Representation:** Each node and its connections are represented.
+- **Destruction of Connections:** For each edge, if it exists, we perform a union operation.
+- **Calculation:** After performing unions, calculate the connectivity to determine the results based on destroyed connections.
 
 ## Project Directory Structure
 
