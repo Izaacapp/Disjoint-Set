@@ -33,7 +33,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#files-included">Files Included</a></li>
+    <li><a href="#project-directory-structure">Project Directory Structure</a></li>
     <li><a href="#compilation-and-execution">Compilation and Execution</a></li>
     <li><a href="#sample-input-and-output">Sample Input and Output</a></li>
     <li><a href="#testing-strategy">Testing Strategy</a></li>
