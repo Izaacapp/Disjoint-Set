@@ -1,3 +1,5 @@
+# Project ReadMe
+
 <a name="readme-top"></a>
 
 <div align="center">
@@ -12,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/your-repo-link">
-    <img src="your-logo.png" alt="Logo" width="80" height="80">
+    <img src="/Users/beck/GitHub/myRepos/Disjoint-Set/Disjoint-Set.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Disjoint Set Network Connectivity</h3>
@@ -47,7 +49,7 @@
 
 ## About The Project
 
-This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
+This project is for Assignment 3 of COP 3503C. The assignment involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
 ## Files Included
 
@@ -126,20 +128,21 @@ Your Name
 ## Acknowledgments
 
 * [University of Central Florida](https://www.ucf.edu/)
+* [TAs and Professors of COP 3503C](https://www.ucf.edu/)
 * [Java Documentation](https://docs.oracle.com/en/java/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/your-repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-violet?style=for-the-badge
 [contributors-url]: https://github.com/your-repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/your-repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/badge/Forks-green?style=for-the-badge
 [forks-url]: https://github.com/your-repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/your-repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/badge/Stars-gold?style=for-the-badge
 [stars-url]: https://github.com/your-repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/your-repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/badge/Issues-red?style=for-the-badge
 [issues-url]: https://github.com/your-repo/issues
 [license-shield]: https://img.shields.io/github/license/your-repo.svg?style=for-the-badge
 [license-url]: https://github.com/your-repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/your-linkedin-profile
+[linkedin-url]: https://www.linkedin.com/in/your-linkedin-profile
