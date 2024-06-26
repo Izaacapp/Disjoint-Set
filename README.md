@@ -24,9 +24,9 @@
     <br />
     <br />
     ·
-    <a href="https://github.com/your-repo-link/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/Izaacapp/Disjoint-Set/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/your-repo-link/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/Izaacapp/Disjoint-Set/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
