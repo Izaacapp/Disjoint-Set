@@ -131,15 +131,16 @@ Izaac Plambeck
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
+<!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/badge/Contributors-violet?style=for-the-badge
-[contributors-url]: https://github.com/your-repo/graphs/contributors
+[contributors-url]: https://github.com/Izaacapp/Disjoint-Set/graphs/contributors
 [forks-shield]: https://img.shields.io/badge/Forks-green?style=for-the-badge
-[forks-url]: https://github.com/your-repo/network/members
+[forks-url]: https://github.com/Izaacapp/Disjoint-Set/network/members
 [stars-shield]: https://img.shields.io/badge/Stars-gold?style=for-the-badge
-[stars-url]: https://github.com/your-repo/stargazers
+[stars-url]: https://github.com/Izaacapp/Disjoint-Set/stargazers
 [issues-shield]: https://img.shields.io/badge/Issues-red?style=for-the-badge
-[issues-url]: https://github.com/your-repo/issues
-[license-shield]: https://img.shields.io/github/license/your-repo.svg?style=for-the-badge
-[license-url]: https://github.com/your-repo/blob/master/LICENSE.txt
+[issues-url]: https://github.com/Izaacapp/Disjoint-Set/issues
+[license-shield]: https://img.shields.io/github/license/Izaacapp/Disjoint-Set.svg?style=for-the-badge
+[license-url]: https://github.com/Izaacapp/Disjoint-Set/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/your-linkedin-profile
+[linkedin-url]: https://www.linkedin.com/in/izaac-plambeck/
