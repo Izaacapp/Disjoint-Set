@@ -68,7 +68,7 @@ This project involves using disjoint set data structures to solve the problem of
 - **bin/**: Compiled Java classes directory.
   - **Main.class**
   - **Main$DisjointSet.class**
-- **.gitignore**: Git ignore file.
+- **.gitignore**: 
 - **README.md**: 
 - **MIT-LICENSE.txt**: 
 
