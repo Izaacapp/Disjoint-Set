@@ -1,19 +1,17 @@
-# Project ReadMe
-
 <a name="readme-top"></a>
 
 <div align="center">
-  
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
-  [![Issues][issues-shield]][issues-url]
-  [![LinkedIn][linkedin-shield]][linkedin-url]
-</div>
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+</div>
 <br />
 <div align="center">
-  <a href="https://github.com/your-repo-link">
+  <a href="https://github.com/Izaacapp/Disjoint-Set">
     <img src="/Users/beck/GitHub/myRepos/Disjoint-Set/Disjoint-Set.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -128,7 +126,6 @@ Your Name
 ## Acknowledgments
 
 * [University of Central Florida](https://www.ucf.edu/)
-* [TAs and Professors of COP 3503C](https://www.ucf.edu/)
 * [Java Documentation](https://docs.oracle.com/en/java/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
