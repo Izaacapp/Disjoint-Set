@@ -47,7 +47,7 @@
 
 ## About The Project
 
-This project is for Assignment 3 of COP 3503C. The assignment involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
+This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
 ## Files Included
 
