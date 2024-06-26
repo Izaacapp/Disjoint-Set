@@ -49,28 +49,37 @@
 
 This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
 
-## Files Included
+👾🖥️ **Tidying up the mess... Engaging cleanup protocol!** 🖥️👾
 
-- **src/main/java/Main.java**: The main Java program file containing the implementation of the solution.
-- **src/test/resources/**: Directory containing test input and output files.
-  - **destroy_10.in**: Input file for test case 1.
-  - **destroy_10.out**: Expected output file for test case 1.
-  - **destroy_sample_01.in**: Input file for test case 2.
-  - **destroy_sample_01.out**: Expected output file for test case 2.
-  - **destroy_sample_02.in**: Input file for test case 3.
-  - **destroy_sample_02.out**: Expected output file for test case 3.
-  - **test_results.log**: Log file to store the results of the test runs.
-- **src/test/scripts/run_tests.sh**: Shell script to compile and run the tests.
-- **docs/**: Directory containing documentation files.
-  - **PA3 more hints.png**: Additional hints for the assignment.
-  - **Plambeck_testStrategy.txt**: Testing strategy document.
-- **resources/Disjoint-Set.png**: Image for the README.
-- **bin/**: Compiled Java classes directory.
-  - **Main.class**
-  - **Main$DisjointSet.class**
-- **.gitignore**: 
-- **README.md**: 
-- **MIT-LICENSE.txt**: 
+## Project Directory Structure
+
+**Source Files:**
+- `src/main/java/Main.java`: The main Java program file containing the implementation of the solution.
+
+**Test Cases:**
+- `src/test/resources/destroy_10.in` & `destroy_10.out`
+- `src/test/resources/destroy_sample_01.in` & `destroy_sample_01.out`
+- `src/test/resources/destroy_sample_02.in` & `destroy_sample_02.out`
+- `src/test/resources/test_results.log`: Log file to store the results of the test runs.
+
+**Scripts:**
+- `src/test/scripts/run_tests.sh`: Shell script to compile and run the tests.
+
+**Documentation:**
+- `docs/PA3 more hints.png`: Additional hints for the assignment.
+- `docs/Plambeck_testStrategy.txt`: Testing strategy document.
+
+**Resources:**
+- `resources/Disjoint-Set.png`: Image for the README.
+
+**Compiled Classes:**
+- `bin/Main.class`
+- `bin/Main$DisjointSet.class`
+
+**Configuration Files:**
+- `.gitignore`
+- `README.md`
+- `MIT-LICENSE.txt`
 
 ## Compilation and Execution
 
