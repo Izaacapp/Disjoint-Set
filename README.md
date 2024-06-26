@@ -121,7 +121,7 @@ This script will compile the Java program, run it against the provided input fil
 
 ## Testing Strategy
 
-The testing strategy is outlined in the `Plambeck_testStrategy.txt` file. It includes unit tests, integration tests, system tests, and performance tests to ensure the robustness and correctness of the program.
+The testing strategy is outlined in my `Plambeck_testStrategy.txt` file. It includes unit tests, integration tests, system tests, and performance tests to ensure the robustness and correctness of the program.
 
 ## Contributing
 
@@ -146,7 +146,6 @@ Izaac Plambeck
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- MARKDOWN LINKS & IMAGES -->
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/badge/Contributors-violet?style=for-the-badge
 [contributors-url]: https://github.com/Izaacapp/Disjoint-Set/graphs/contributors
