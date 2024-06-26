@@ -18,7 +18,6 @@
   <h3 align="center">Disjoint Set Network Connectivity</h3>
 
   <p align="center">
-    Using disjoint sets to reduce network connectivity by destroying connections.
     <br />
     <a href=https://github.com/Izaacapp/Disjoint-Set"><strong>Explore the docs »</strong></a>
     <br />
