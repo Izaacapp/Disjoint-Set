@@ -115,7 +115,7 @@ Contributions are vital for progress. Fork the repo, create a feature branch, co
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `MIT-LICENSE.txt` for more information.
 
 ## Contact
 
