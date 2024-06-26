@@ -51,17 +51,26 @@ This project involves using disjoint set data structures to solve the problem of
 
 ## Files Included
 
-- **Main.java**: The main Java program file containing the implementation of the solution.
-- **destroy_10.in**: Input file for test case 1.
-- **destroy_10.out**: Expected output file for test case 1.
-- **destroy_sample_01.in**: Input file for test case 2.
-- **destroy_sample_01.out**: Expected output file for test case 2.
-- **destroy_sample_02.in**: Input file for test case 3.
-- **destroy_sample_02.out**: Expected output file for test case 3.
-- **run_tests.sh**: Shell script to compile and run the tests.
-- **test_results.log**: Log file to store the results of the test runs.
-- **Plambeck_testStrategy.txt**: Testing strategy document.
-- **PA3 more hints.png**: Additional hints for the assignment.
+- **src/main/java/Main.java**: The main Java program file containing the implementation of the solution.
+- **src/test/resources/**: Directory containing test input and output files.
+  - **destroy_10.in**: Input file for test case 1.
+  - **destroy_10.out**: Expected output file for test case 1.
+  - **destroy_sample_01.in**: Input file for test case 2.
+  - **destroy_sample_01.out**: Expected output file for test case 2.
+  - **destroy_sample_02.in**: Input file for test case 3.
+  - **destroy_sample_02.out**: Expected output file for test case 3.
+  - **test_results.log**: Log file to store the results of the test runs.
+- **src/test/scripts/run_tests.sh**: Shell script to compile and run the tests.
+- **docs/**: Directory containing documentation files.
+  - **PA3 more hints.png**: Additional hints for the assignment.
+  - **Plambeck_testStrategy.txt**: Testing strategy document.
+- **resources/Disjoint-Set.png**: Image for the README.
+- **bin/**: Compiled Java classes directory.
+  - **Main.class**
+  - **Main$DisjointSet.class**
+- **.gitignore**: Git ignore file.
+- **README.md**: 
+- **MIT-LICENSE.txt**: 
 
 ## Compilation and Execution
 
