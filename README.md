@@ -20,7 +20,7 @@
   <p align="center">
     Using disjoint sets to reduce network connectivity by destroying connections.
     <br />
-    <a href="https://github.com/your-repo-link"><strong>Explore the docs »</strong></a>
+    <a href=https://github.com/Izaacapp/Disjoint-Set"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
