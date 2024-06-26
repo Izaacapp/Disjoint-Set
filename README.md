@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Izaacapp/Disjoint-Set">
-    <img src="Disjoint-Set.png" alt="Logo" width="150" height="80">
+    <img src="Disjoint-Set.png" alt="Logo" width="200" height="80">
   </a>
 
   <h3 align="center">Disjoint Set Network Connectivity</h3>
@@ -119,9 +119,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name  
-[Tweet me](https://twitter.com/your-twitter-handle)  
-[Email me](mailto:your-email@example.com)  
+Izaac Plambeck  
+[Tweet me](https://x.com/Izaacapp)  
+[Email me](mailto:izaacap@gmail.com) 
 
 ## Acknowledgments
 
