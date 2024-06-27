@@ -46,7 +46,7 @@
 
 ## About The Project
 
-This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections.
+This project involves using disjoint set data structures to solve the problem of reducing network connectivity by destroying connections
 
 **Methodology:**
 - **Graph Representation:** Each node and its connections are represented.
